@@ -132,35 +132,63 @@ PRACTICE_AREA_LABELS = {
 }
 
 # ---------------------------------------------------------------------------
-# City population tiers (top 100 US cities, lowercase)
+# City population tiers (US metro areas by population, lowercase)
+#   Tier 1 = top 50 metros (1.0x)
+#   Tier 2 = metros ranked 51-100 (0.7x)
+#   Tier 3 = metros ranked 101-200 (0.5x)
+#   Tier 4 = everything else (0.3x)
 # ---------------------------------------------------------------------------
 TIER_1_CITIES = {
+    # 1-20
     "new york", "los angeles", "chicago", "houston", "phoenix",
     "philadelphia", "san antonio", "san diego", "dallas", "san jose",
     "austin", "jacksonville", "fort worth", "columbus", "charlotte",
     "indianapolis", "san francisco", "seattle", "denver", "washington",
-}
-
-TIER_2_CITIES = {
+    # 21-50
     "nashville", "oklahoma city", "el paso", "boston", "portland",
     "las vegas", "memphis", "louisville", "baltimore", "milwaukee",
     "albuquerque", "tucson", "fresno", "mesa", "sacramento",
     "atlanta", "kansas city", "omaha", "colorado springs", "raleigh",
     "long beach", "virginia beach", "miami", "oakland", "minneapolis",
-    "tulsa", "tampa", "arlington", "new orleans", "wichita",
+    "tulsa", "tampa", "arlington", "new orleans", "orlando",
 }
 
-TIER_3_CITIES = {
-    "bakersfield", "aurora", "anaheim", "santa ana", "riverside",
-    "corpus christi", "lexington", "henderson", "stockton", "st. paul",
-    "cincinnati", "pittsburgh", "greensboro", "anchorage", "plano",
-    "lincoln", "orlando", "irvine", "newark", "durham",
+TIER_2_CITIES = {
+    # 51-100
+    "wichita", "bakersfield", "aurora", "anaheim", "santa ana",
+    "riverside", "corpus christi", "lexington", "henderson", "stockton",
+    "st. paul", "cincinnati", "pittsburgh", "greensboro", "anchorage",
+    "plano", "lincoln", "irvine", "newark", "durham",
     "chula vista", "toledo", "fort wayne", "st. petersburg", "laredo",
     "jersey city", "chandler", "madison", "lubbock", "scottsdale",
     "reno", "buffalo", "gilbert", "glendale", "north las vegas",
     "winston-salem", "chesapeake", "norfolk", "fremont", "garland",
     "irving", "richmond", "hialeah", "boise", "spokane",
     "baton rouge", "tacoma", "san bernardino", "modesto", "fontana",
+}
+
+TIER_3_CITIES = {
+    # 101-200
+    "moreno valley", "des moines", "fayetteville", "yonkers", "worcester",
+    "columbia", "cape coral", "mckinney", "little rock", "oxnard",
+    "amarillo", "grand rapids", "salt lake city", "huntsville", "tallahassee",
+    "grand prairie", "overland park", "knoxville", "port st. lucie", "brownsville",
+    "newport news", "chattanooga", "tempe", "providence", "santa clarita",
+    "fort lauderdale", "springfield", "dayton", "bridgeport", "jackson",
+    "sioux falls", "peoria", "pomona", "ontario", "joliet",
+    "elk grove", "eugene", "cary", "garden grove", "corona",
+    "pembroke pines", "salem", "lancaster", "palmdale", "salinas",
+    "pasadena", "rockford", "paterson", "alexandria", "macon",
+    "savannah", "hayward", "charleston", "clarksville", "murfreesboro",
+    "miramar", "midland", "roseville", "surprise", "denton",
+    "torrance", "pompano beach", "mcallen", "killeen", "cedar rapids",
+    "topeka", "olathe", "visalia", "beaumont", "west valley city",
+    "thornton", "hartford", "waco", "thousand oaks", "columbia",
+    "concord", "lakewood", "sterling heights", "palm bay", "abilene",
+    "elizabeth", "carrollton", "birmingham", "rochester", "provo",
+    "ann arbor", "bellevue", "clearwater", "west jordan", "richardson",
+    "manchester", "westminster", "costa mesa", "mobile", "pueblo",
+    "erie", "sandy springs", "centennial", "boulder", "naperville",
 }
 
 # ---------------------------------------------------------------------------
@@ -198,8 +226,12 @@ def parse_city(city_input: str) -> str:
 
 
 def get_city_tier(city_name: str) -> int:
-    """Return the population tier (1-4) for a given city name."""
-    city_lower = city_name.lower().strip()
+    """Return the population tier (1-4) for a given city name.
+
+    Accepts raw input like "Orlando FL", "Orlando, FL", or "orlando" —
+    the state suffix is stripped and matching is case-insensitive.
+    """
+    city_lower = parse_city(city_name).lower().strip()
 
     if city_lower in TIER_1_CITIES:
         return 1
