@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Flow of the Mass</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Nunito:ital,wght@0,400;0,700;0,800;1,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#241a12;
+    --parchment:#f6efe1;
+    --parchment-2:#efe4cd;
+    --lead:#2b2620;
+    --gold:#c39a2b;
+    --sapphire:#2f6b9e;
+    --emerald:#3f8163;
+    --ruby:#a5303a;
+    --amethyst:#7a5698;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Nunito',sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(circle at 20% 0%, #fffaf0 0%, transparent 45%),
+      radial-gradient(circle at 80% 100%, #fdf5e3 0%, transparent 45%),
+      var(--parchment);
+    padding:32px 16px 60px;
+    line-height:1.4;
+  }
+  .wrap{max-width:760px;margin:0 auto;}
+  header{text-align:center;margin-bottom:14px;}
+  .eyebrow{font-family:'Cinzel',serif;letter-spacing:.28em;font-size:.72rem;color:var(--gold);text-transform:uppercase;margin-bottom:6px;}
+  h1{font-family:'Cinzel',serif;font-weight:700;font-size:clamp(2rem,7vw,3.2rem);line-height:1.05;color:var(--ink);}
+  .sub{font-size:1rem;color:#6b5d47;margin-top:8px;font-style:italic;}
+  .legend{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:18px auto 30px;}
+  .chip{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1.5px solid var(--parchment-2);border-radius:999px;padding:5px 12px;font-weight:700;font-size:.8rem;}
+  .dot{width:14px;height:14px;border-radius:50%;display:inline-block;}
+  .d-stand{background:var(--emerald);}.d-sit{background:var(--sapphire);}.d-kneel{background:var(--ruby);}
+  .journey{position:relative;}
+  .journey::before{content:"";position:absolute;left:31px;top:20px;bottom:40px;width:4px;background:repeating-linear-gradient(var(--gold) 0 10px, transparent 10px 20px);z-index:0;}
+  .part{position:relative;padding-left:70px;margin-bottom:26px;z-index:1;}
+  .num{position:absolute;left:0;top:6px;width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-weight:700;font-size:1.5rem;color:#fff;border:4px solid var(--lead);box-shadow:0 3px 0 rgba(0,0,0,.15);}
+  .panel{border:3px solid var(--lead);border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 6px 18px rgba(60,40,10,.10);}
+  .panel-head{padding:14px 18px;color:#fff;display:flex;align-items:center;gap:12px;}
+  .panel-head .icon{font-size:1.9rem;line-height:1;filter:drop-shadow(0 1px 1px rgba(0,0,0,.25));}
+  .panel-head h2{font-family:'Cinzel',serif;font-weight:700;font-size:1.15rem;line-height:1.15;}
+  .panel-head .tag{font-family:'Nunito';font-weight:800;font-size:.72rem;opacity:.9;letter-spacing:.05em;display:block;margin-top:2px;text-transform:uppercase;}
+  .steps{padding:6px 18px 14px;}
+  .step{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px dashed var(--parchment-2);}
+  .step:last-child{border-bottom:none;}.step .glyph{font-size:1.25rem;flex-shrink:0;width:26px;text-align:center;}.step .body b{font-size:.98rem;}.step .body p{font-size:.86rem;color:#6b5d47;margin-top:1px;}
+  .posture{flex-shrink:0;width:14px;height:14px;border-radius:50%;margin-top:5px;border:2px solid rgba(0,0,0,.12);}
+  .c1 .num,.c1 .panel-head{background:var(--sapphire);}.c2 .num,.c2 .panel-head{background:var(--emerald);}.c3 .num,.c3 .panel-head{background:var(--ruby);}.c4 .num,.c4 .panel-head{background:var(--amethyst);}.c3 .panel{border-color:var(--gold);}
+  .heart-note{background:linear-gradient(#fbf3d8,#f7ead0);border-top:2px solid var(--gold);padding:10px 18px;font-size:.85rem;font-weight:700;color:#7a5a12;display:flex;gap:8px;align-items:center;}
+  footer{text-align:center;margin-top:34px;font-size:.85rem;color:#8a7a5f;border-top:1.5px solid var(--parchment-2);padding-top:16px;}footer b{color:var(--ruby);}
+  @media (max-width:480px){.part{padding-left:56px;}.num{width:50px;height:50px;font-size:1.2rem;}.journey::before{left:25px;}}
+  @media print{body{background:#fff;padding:0;}.panel{box-shadow:none;}.part{break-inside:avoid;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><div class="eyebrow">✦ Our Journey Every Sunday ✦</div><h1>The Flow of the Mass</h1><p class="sub">Four parts, one big prayer — start to finish</p></header>
+  <div class="legend"><span class="chip"><span class="dot d-stand"></span>Stand</span><span class="chip"><span class="dot d-sit"></span>Sit</span><span class="chip"><span class="dot d-kneel"></span>Kneel</span><span class="chip">🎨 Follow the golden path down!</span></div>
+  <div class="journey">
+    <div class="part c1"><div class="num">1</div><div class="panel"><div class="panel-head"><span class="icon">⛪</span><div><span class="tag">Introductory Rites</span><h2>We Gather Together</h2></div></div><div class="steps">
+      <div class="step"><span class="posture" style="background:var(--emerald)"></span><span class="glyph">🎵</span><div class="body"><b>Entrance &amp; Song</b><p>The priest walks in and everyone sings to begin.</p></div></div>
+      <div class="step"><span class="posture" style="background:var(--emerald)"></span><span class="glyph">✝️</span><div class="body"><b>Sign of the Cross &amp; Greeting</b><p>"In the name of the Father, and of the Son…"</p></div></div>
+      <div class="step"><span class="posture" style="background:var(--emerald)"></span><span class="glyph">🙏</span><div class="body"><b>We Say Sorry</b><p>"Lord, have mercy" — we ask God to forgive us.</p></div></div>
+      <div class="step"><span class="posture" style="background:var(--emerald)"></span><span class="glyph">🌟</span><div class="body"><b>The Gloria</b><p>A happy song of praise: "Glory to God!" (Sundays &amp; feast days.)</p></div></div>
+      <div class="step"><span class="posture" style="background:var(--emerald)"></span><span class="glyph">📿</span><div class="body"><b>Opening Prayer</b><p>The priest prays for all of us together.</p></div></div>
+    </div></div></div>
+    <div class="part c2"><div class="num">2</div><div class="panel"><div class="panel-head"><span class="icon">📖</span><div><span class="tag">Liturgy of the Word</span><h2>We Listen to God</h2></div></div><div class="steps">
+      <div class="step"><span class="posture" style="background:var(--sapphire)"></span><span class="glyph">📜</span><div class="body"><b>First Reading</b><p>Usually a story from the Old Testament.</p></div></div>
+      <div class="step"><span class="posture" style="background:var(--sapphire)"></span><span class="glyph">🎶</span><div class="body"><b>Responsorial Psalm</b><p>We sing or say a line back together.</p></div></div>
+      <div class="step"><span class="posture" style="background:var(--sapphire)"></span><span class="glyph">✉️</span><div class="body"><b>Second Reading</b><p>A letter from the New Testament (Sundays).</p></div></div>
+      <div class="step"><span class="posture" style="background:var(--emerald)"></span><span class="glyph">🎉</span><div class="body"><b>Alleluia!</b><p>We stand and sing to welcome the Gospel.</p></div></div>
+      <div class="step"><span class="posture" style="background:var(--emerald)"></span><span class="glyph">✝️</span><div class="body"><b>The Gospel</b><p>A story about Jesus — the most important reading.</p></div></div>
+      <div class="step"><span class="posture" style="background:var(--sapphire)"></span><span class="glyph">🗣️</span><div class="body"><b>Homily</b><p>The priest explains what the readings mean for us.</p></div></div>
+      <div class="step"><span class="posture" style="background:var(--emerald)"></span><span class="glyph">💛</span><div class="body"><b>The Creed</b><p>We say what we believe: "I believe in one God…"</p></div></div>
+      <div class="step"><span class="posture" style="background:var(--emerald)"></span><span class="glyph">🕯️</span><div class="body"><b>Prayers of the Faithful</b><p>We pray for the Church, the world, and people in need.</p></div></div>
+    </div></div></div>
+    <div class="part c3"><div class="num">3</div><div class="panel"><div class="panel-head"><span class="icon">🍞</span><div><span class="tag">Liturgy of the Eucharist · The Heart of the Mass</span><h2>We Give Thanks</h2></div></div><div class="steps">
+      <div class="step"><span class="posture" style="background:var(--sapphire)"></span><span class="glyph">🎁</span><div class="body"><b>Preparing the Gifts</b><p>Bread and wine are brought to the altar. A collection is taken.</p></div></div>
+      <div class="step"><span class="posture" style="background:var(--emerald)"></span><span class="glyph">🙌</span><div class="body"><b>Holy, Holy, Holy</b><p>We sing praise as the great prayer begins.</p></div></div>
+      <div class="step"><span class="posture" style="background:var(--ruby)"></span><span class="glyph">✨</span><div class="body"><b>The Consecration</b><p>By God's power, the bread and wine become the Body and Blood of Jesus. We kneel.</p></div></div>
+      <div class="step"><span class="posture" style="background:var(--emerald)"></span><span class="glyph">🙏</span><div class="body"><b>The Our Father</b><p>We pray the prayer Jesus taught us.</p></div></div>
+      <div class="step"><span class="posture" style="background:var(--emerald)"></span><span class="glyph">🤝</span><div class="body"><b>Sign of Peace</b><p>"Peace be with you" — we greet those near us.</p></div></div>
+      <div class="step"><span class="posture" style="background:var(--emerald)"></span><span class="glyph">🐑</span><div class="body"><b>Lamb of God</b><p>We sing as we get ready to receive Jesus.</p></div></div>
+      <div class="step"><span class="posture" style="background:var(--emerald)"></span><span class="glyph">🍞</span><div class="body"><b>Communion</b><p>People receive Jesus in the Eucharist, then we pray quietly.</p></div></div>
+    </div><div class="heart-note">💗 This is the most special part — Jesus comes to us!</div></div></div>
+    <div class="part c4"><div class="num">4</div><div class="panel"><div class="panel-head"><span class="icon">🕊️</span><div><span class="tag">Concluding Rites</span><h2>We Go Out to Love</h2></div></div><div class="steps">
+      <div class="step"><span class="posture" style="background:var(--emerald)"></span><span class="glyph">🙌</span><div class="body"><b>Final Blessing</b><p>The priest blesses us with the Sign of the Cross.</p></div></div>
+      <div class="step"><span class="posture" style="background:var(--emerald)"></span><span class="glyph">🚪</span><div class="body"><b>The Dismissal</b><p>"Go in peace." We answer: "Thanks be to God!"</p></div></div>
+    </div></div></div>
+  </div>
+  <footer>Every Mass follows this same path — once you know the four parts, you'll always know where you are!<br><b>Gather → Listen → Give Thanks → Go Out</b></footer>
+</div>
+</body>
+</html>
